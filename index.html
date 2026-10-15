@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Julio Lemus Calderon</title>
+<meta name="description" content="Maestro Cinturon Negro 9no DAN creador del estilo KEN BOXING RIU.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@400;500;600;700&family=Shippori+Mincho:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#f7f4ee;--c-bg-alt:#efeae0;--c-surface:#ffffff;--c-surface-2:#fbf9f4;
+  --c-ink:#141414;--c-ink-2:#2a2a2a;--c-mute:#6b6862;--c-dim:#9a958d;
+  --c-accent:#b8860b;--c-accent-2:#8b0000;--c-accent-3:#c9a227;
+  --c-line:rgba(20,20,20,.1);--c-line-strong:rgba(20,20,20,.2);
+  --f-display:'Cinzel',serif;--f-serif:'Shippori Mincho',serif;--f-body:'Montserrat',system-ui,sans-serif;
+  --fs-hero:clamp(2.6rem,7vw + 1rem,6rem);
+  --fs-h1:clamp(2rem,4vw + 1rem,3.75rem);
+  --fs-h2:clamp(1.6rem,2.4vw + .8rem,2.75rem);
+  --fs-h3:clamp(1.15rem,1vw + .9rem,1.5rem);
+  --fs-body:clamp(.95rem,.4vw + .85rem,1.0625rem);
+  --fs-small:.8125rem;
+  --space-xs:.5rem;--space-sm:1rem;--space-md:1.75rem;
+  --space-lg:3rem;--space-xl:5rem;--space-2xl:8rem;
+  --container:1240px;--header-h:78px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --t-fast:200ms;--t-base:380ms;--t-slow:700ms;
+  --shadow-sm:0 1px 2px rgba(20,20,20,.05),0 2px 6px rgba(20,20,20,.05);
+  --shadow-md:0 4px 12px rgba(20,20,20,.07),0 12px 32px rgba(20,20,20,.08);
+  --shadow-lg:0 12px 32px rgba(20,20,20,.1),0 32px 64px rgba(20,20,20,.12);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--f-body);font-size:var(--fs-body);line-height:1.7;
+  color:var(--c-ink);background:var(--c-bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body.no-scroll{overflow:hidden}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+::selection{background:var(--c-accent);color:#fff}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:700;line-height:1.15;color:var(--c-ink)}
+h1{font-size:var(--fs-h1)} h2{font-size:var(--fs-h2)} h3{font-size:var(--fs-h3)}
+
+.container{width:100%;max-width:var(--container);margin-inline:auto;
+  padding-inline:clamp(1.25rem,4vw,2.5rem);position:relative;z-index:1}
+
+.text-accent{color:var(--c-accent)} .text-mute{color:var(--c-mute)}
+.text-center{text-align:center}
+.text-justify{text-align:justify;hyphens:auto;max-width:68ch}
+.section{padding-block:clamp(4rem,9vw,8rem);position:relative;overflow:hidden;
+  content-visibility:auto;contain-intrinsic-size:auto 800px}
+.section--alt{background:var(--c-bg-alt)}
+.section-eyebrow{display:inline-block;font-size:var(--fs-small);font-weight:600;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--c-accent);
+  margin-bottom:var(--space-sm);position:relative;padding-left:48px}
+.section-eyebrow::before{content:'';position:absolute;left:0;top:50%;width:34px;height:1px;
+  background:var(--c-accent);transform:translateY(-50%)}
+.section-title{font-size:var(--fs-h2);margin-bottom:var(--space-md);
+  position:relative;display:inline-block;padding-bottom:var(--space-sm)}
+.section-title::after{content:'';position:absolute;left:0;bottom:0;width:70px;height:2px;background:var(--c-accent)}
+.section-title--center{display:block;text-align:center}
+.section-title--center::after{left:50%;transform:translateX(-50%)}
+.lead{font-size:clamp(1.05rem,1vw + .85rem,1.25rem);color:var(--c-mute);
+  line-height:1.75;margin-bottom:var(--space-md);max-width:62ch}
+.btn{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 2rem;
+  font-size:.8125rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  border:1px solid var(--c-ink);background:var(--c-ink);color:#fff;
+  position:relative;overflow:hidden;transition:color var(--t-base) var(--ease)}
+.btn::before{content:'';position:absolute;inset:0;background:var(--c-accent);
+  transform:scaleX(0);transform-origin:right;transition:transform var(--t-base) var(--ease);z-index:0}
+.btn > *{position:relative;z-index:1}
+.btn:hover::before{transform:scaleX(1);transform-origin:left}
+.btn--accent{background:var(--c-accent);border-color:var(--c-accent)}
+.btn--accent::before{background:var(--c-ink)}
+.btn--ghost{background:transparent;color:var(--c-ink);border-color:var(--c-ink)}
+.btn--ghost::before{background:var(--c-ink)}
+.btn--ghost:hover{color:#fff}
+.btn--light{background:transparent;color:#f5f3ee;border-color:rgba(245,243,238,.4)}
+.btn--light::before{background:var(--c-accent-3)}
+.btn--light:hover{color:var(--c-ink)}
+
+/* Header */
+.site-header{position:fixed;top:0;left:0;right:0;height:var(--header-h);z-index:1000;
+  display:flex;align-items:center;background:rgba(247,244,238,.85);
+  backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);
+  border-bottom:1px solid transparent;transition:background var(--t-base) var(--ease),border-color var(--t-base) var(--ease),box-shadow var(--t-base) var(--ease)}
+.site-header.is-scrolled{background:rgba(247,244,238,.98);border-bottom-color:var(--c-line);box-shadow:var(--shadow-sm)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:var(--space-md)}
+.brand{display:flex;align-items:center;gap:.85rem;font-family:var(--f-display);
+  font-weight:700;font-size:1.1rem;letter-spacing:.16em;text-transform:uppercase;color:var(--c-ink);z-index:2}
+.brand__mark{width:44px;height:44px;display:grid;place-items:center;background:var(--c-ink);
+  color:var(--c-accent-3);font-family:var(--f-serif);font-weight:700;font-size:1.2rem;flex-shrink:0;
+  transition:transform var(--t-slow) var(--ease),background var(--t-base) var(--ease)}
+.brand__mark--photo{background:none;padding:0;overflow:hidden;
+  border:2px solid var(--c-accent);border-radius:50%;
+  transition:transform var(--t-base) var(--ease),border-color var(--t-base) var(--ease),box-shadow var(--t-base) var(--ease);
+  box-shadow:0 2px 8px rgba(184,134,11,.25)}
+.brand__mark--photo img{width:100%;height:100%;object-fit:cover;
+  filter:sepia(.15) contrast(1.05);
+  transition:filter var(--t-base) var(--ease),transform var(--t-base) var(--ease)}
+.brand:hover .brand__mark--photo{transform:rotate(-6deg) scale(1.06);
+  border-color:var(--c-ink);box-shadow:0 4px 16px rgba(184,134,11,.4)}
+.brand:hover .brand__mark--photo img{filter:sepia(0) contrast(1.1);transform:scale(1.08)}
+.brand__text small{display:block;font-family:var(--f-body);font-size:.6rem;
+  letter-spacing:.32em;color:var(--c-mute);font-weight:500;margin-top:2px}
+
+.nav__list{display:flex;gap:1.9rem;align-items:center}
+.nav__link{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--c-mute);position:relative;padding:.5rem 0;transition:color var(--t-fast) var(--ease)}
+.nav__link::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;
+  background:var(--c-accent);transform:scaleX(0);transform-origin:right;transition:transform var(--t-base) var(--ease)}
+.nav__link:hover,.nav__link[aria-current="page"]{color:var(--c-ink)}
+.nav__link:hover::after,.nav__link[aria-current="page"]::after{transform:scaleX(1);transform-origin:left}
+
+.nav__toggle{display:none;width:44px;height:44px;position:relative;z-index:1002;flex-shrink:0}
+.nav__toggle span{display:block;position:absolute;left:12px;right:12px;height:1.5px;background:var(--c-ink);
+  transition:transform var(--t-base) var(--ease),opacity var(--t-base) var(--ease),background var(--t-base) var(--ease)}
+.nav__toggle span:nth-child(1){top:16px}
+.nav__toggle span:nth-child(2){top:22px}
+.nav__toggle span:nth-child(3){top:28px}
+.nav__toggle[aria-expanded="true"] span{background:#f5f3ee}
+.nav__toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav__toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav__toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+.nav-overlay{position:fixed;inset:0;background:rgba(20,20,20,.6);
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  opacity:0;visibility:hidden;pointer-events:none;z-index:998;
+  transition:opacity var(--t-base) var(--ease),visibility var(--t-base) var(--ease)}
+.nav-overlay.is-open{opacity:1;visibility:visible;pointer-events:auto}
+
+@media (max-width:900px){
+  .nav__toggle{display:block}
+  .nav{
+    position:fixed !important;
+    top:0 !important; right:0 !important; bottom:0 !important; left:auto !important;
+    width:min(86vw,400px) !important;
+    height:100vh !important; height:100dvh !important; max-height:100dvh !important;
+    margin:0 !important; padding:0 !important;
+    background:var(--c-ink) !important;
+    border-left:1px solid rgba(184,134,11,.25);
+    box-shadow:-30px 0 80px rgba(0,0,0,.4);
+    z-index:1001;
+    transform:translate3d(100%,0,0);
+    transition:transform 420ms cubic-bezier(.22,1,.36,1);
+    will-change:transform;
+    display:flex !important; flex-direction:column;
+    overflow:hidden;
+    visibility:hidden;
+  }
+  .nav.is-open{transform:translate3d(0,0,0);visibility:visible}
+  .nav__close{display:flex;align-items:center;justify-content:space-between;
+    padding:1.25rem 1.5rem;border-bottom:1px solid rgba(245,243,238,.1);
+    background:rgba(0,0,0,.2)}
+  .nav__close-title{font-family:var(--f-display);font-size:.8rem;
+    letter-spacing:.28em;text-transform:uppercase;color:var(--c-accent-3)}
+  .nav__close-btn{width:40px;height:40px;display:grid;place-items:center;
+    color:#f5f3ee;font-size:1.4rem;line-height:1;border:1px solid rgba(245,243,238,.25);
+    border-radius:50%;transition:background var(--t-fast) var(--ease),transform var(--t-fast) var(--ease)}
+  .nav__close-btn:hover,.nav__close-btn:active{background:var(--c-accent);transform:rotate(90deg)}
+  .nav__list{display:flex !important;flex-direction:column !important;
+    align-items:stretch !important;gap:0 !important;
+    padding:1.5rem 1.5rem 2rem;overflow-y:auto;-webkit-overflow-scrolling:touch;flex:1}
+  .nav__list li{width:100%}
+  .nav__link{display:flex !important;align-items:center;justify-content:space-between;
+    font-size:1.05rem;font-family:var(--f-display);letter-spacing:.08em;
+    color:#f5f3ee !important;padding:1rem .25rem;
+    border-bottom:1px solid rgba(245,243,238,.1);width:100%;
+    opacity:0;transform:translateX(30px);
+    transition:opacity 420ms var(--ease),transform 420ms var(--ease),color var(--t-fast) var(--ease)}
+  .nav__link::after{content:'→';position:static;width:auto;height:auto;
+    background:none;transform:none;color:var(--c-accent-3);font-size:1rem;
+    opacity:.6;margin-left:auto;
+    transition:transform var(--t-base) var(--ease),opacity var(--t-base) var(--ease)}
+  .nav__link:hover,.nav__link:active{color:var(--c-accent-3) !important}
+  .nav__link:hover::after,.nav__link:active::after{transform:translateX(6px);opacity:1}
+  .nav.is-open .nav__link{opacity:1;transform:translateX(0)}
+  .nav.is-open .nav__list li:nth-child(1) .nav__link{transition-delay:100ms}
+  .nav.is-open .nav__list li:nth-child(2) .nav__link{transition-delay:150ms}
+  .nav.is-open .nav__list li:nth-child(3) .nav__link{transition-delay:200ms}
+  .nav.is-open .nav__list li:nth-child(4) .nav__link{transition-delay:250ms}
+  .nav.is-open .nav__list li:nth-child(5) .nav__link{transition-delay:300ms}
+  .nav.is-open .nav__list li:nth-child(6) .nav__link{transition-delay:350ms}
+  .nav.is-open .nav__list li:nth-child(7) .nav__link{transition-delay:400ms}
+  .nav.is-open .nav__list li:nth-child(8) .nav__link{transition-delay:450ms}
+  .nav__footer{padding:1.5rem;border-top:1px solid rgba(245,243,238,.1);
+    background:rgba(0,0,0,.2);font-size:.7rem;letter-spacing:.24em;
+    text-transform:uppercase;color:rgba(245,243,238,.5)}
+}
+.nav__close,.nav__footer{display:none}
+@media (max-width:900px){.nav__close,.nav__footer{display:flex}}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;
+  padding-top:var(--header-h);background:var(--c-bg);overflow:hidden}
+.hero__kanji{position:absolute;right:-3vw;top:50%;transform:translateY(-50%);
+  font-family:var(--f-serif);font-weight:800;
+  font-size:clamp(20rem,42vw,42rem);line-height:.8;
+  color:rgba(184,134,11,.08);pointer-events:none;user-select:none;z-index:0;
+  contain:layout paint}
+.hero__content{position:relative;z-index:2;max-width:820px;padding-block:var(--space-xl)}
+.hero__eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.4em;
+  text-transform:uppercase;color:var(--c-accent);margin-bottom:var(--space-md);
+  display:flex;align-items:center;gap:1rem}
+.hero__eyebrow::before{content:'';width:48px;height:1px;background:var(--c-accent)}
+.hero__title{font-size:var(--fs-hero);line-height:.95;letter-spacing:.005em;
+  margin-bottom:var(--space-md);color:var(--c-ink)}
+.hero__title em{font-style:normal;color:var(--c-accent);display:block}
+.hero__desc{font-size:clamp(1rem,.9vw + .85rem,1.2rem);color:var(--c-mute);
+  max-width:56ch;margin-bottom:var(--space-lg);line-height:1.75}
+.hero__actions{display:flex;flex-wrap:wrap;gap:var(--space-sm)}
+.hero__meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:var(--space-md);margin-top:var(--space-xl);padding-top:var(--space-lg);
+  border-top:1px solid var(--c-line);max-width:720px}
+.hero__meta-item strong{display:block;font-family:var(--f-display);
+  font-size:clamp(1.75rem,2vw + 1rem,2.5rem);color:var(--c-accent);
+  line-height:1;margin-bottom:.4rem}
+.hero__meta-item span{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--c-dim);font-weight:600}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-md)}
+.grid-1{display:grid;grid-template-columns:1fr;gap:var(--space-lg);max-width:1000px;margin-inline:auto}
+
+/* ✅ CARD CON TEXTO COMPLETO VISIBLE */
+.card{background:var(--c-surface);border:1px solid var(--c-line);
+  padding:clamp(1.75rem,3.5vw,3rem);position:relative;
+  display:flex;flex-direction:column;
+  transition:transform var(--t-base) var(--ease),box-shadow var(--t-base) var(--ease),
+    border-color var(--t-base) var(--ease);
+  contain:layout paint}
+.card::before{content:'';position:absolute;top:0;left:0;width:0;height:3px;
+  background:var(--c-accent);transition:width var(--t-slow) var(--ease)}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--c-accent)}
+.card:hover::before{width:100%}
+
+.card__head{display:grid;grid-template-columns:auto 1fr;gap:var(--space-md);
+  align-items:center;margin-bottom:var(--space-md);
+  padding-bottom:var(--space-md);border-bottom:1px solid var(--c-line)}
+.card__kanji{font-family:var(--f-serif);font-weight:800;font-size:clamp(3.5rem,6vw,5rem);
+  color:var(--c-accent);opacity:.95;line-height:1;text-align:center}
+.card__title-block h3{margin-bottom:.35rem;letter-spacing:.02em;font-size:var(--fs-h3)}
+.card__title-block .card__readings{font-size:.72rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--c-dim);font-weight:600}
+.card__title-block .card__readings strong{color:var(--c-accent);font-weight:700}
+
+/* Bloques de texto dentro de la card */
+.card__body{color:var(--c-ink-2);font-size:.95rem;line-height:1.75}
+.card__body p{margin-bottom:var(--space-sm);max-width:none}
+.card__body p:last-child{margin-bottom:0}
+.card__body strong{color:var(--c-ink);font-weight:700}
+.card__body em{color:var(--c-mute);font-style:italic}
+
+.card__subtitle{font-family:var(--f-display);font-size:1rem;font-weight:700;
+  color:var(--c-accent);letter-spacing:.04em;margin:var(--space-md) 0 var(--space-sm);
+  padding-top:var(--space-sm);border-top:1px dashed var(--c-line)}
+.card__subtitle:first-of-type{border-top:none;padding-top:0;margin-top:0}
+
+.card__list{display:grid;gap:.55rem;margin:var(--space-sm) 0 var(--space-md);
+  padding-left:0}
+.card__list li{position:relative;padding-left:1.4rem;color:var(--c-ink-2);font-size:.93rem}
+.card__list li::before{content:'▸';position:absolute;left:0;top:0;color:var(--c-accent);
+  font-weight:700;font-size:.9rem}
+
+.card__quote{background:var(--c-bg-alt);border-left:3px solid var(--c-accent);
+  padding:var(--space-sm) var(--space-md);margin:var(--space-md) 0;
+  font-family:var(--f-serif);font-style:italic;color:var(--c-ink-2);
+  font-size:.98rem;line-height:1.7}
+.card__quote p{margin:0}
+
+.card__formula{background:var(--c-ink);color:#f5f3ee;padding:var(--space-md);
+  margin:var(--space-md) 0;font-family:var(--f-serif);
+  font-size:.95rem;line-height:1.75;text-align:center;letter-spacing:.02em}
+.card__formula strong{color:var(--c-accent-3)}
+
+.card__table{width:100%;border-collapse:collapse;margin:var(--space-sm) 0 var(--space-md);
+  font-size:.88rem}
+.card__table th,.card__table td{padding:.55rem .7rem;text-align:left;
+  border-bottom:1px solid var(--c-line);vertical-align:top}
+.card__table th{font-family:var(--f-body);font-weight:700;font-size:.72rem;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--c-accent);
+  background:var(--c-bg-alt)}
+.card__table td{color:var(--c-ink-2)}
+.card__table td:first-child{font-weight:600;color:var(--c-ink)}
+
+.card__footer{margin-top:var(--space-md);padding-top:var(--space-md);
+  border-top:1px solid var(--c-line);font-size:.86rem;color:var(--c-mute);
+  font-style:italic;line-height:1.65}
+
+/* Figure */
+.figure{position:relative;background:linear-gradient(135deg,var(--c-surface),var(--c-bg-alt));
+  border:1px solid var(--c-line);aspect-ratio:4/5;overflow:hidden;
+  display:grid;place-items:center;color:var(--c-dim);
+  font-family:var(--f-display);letter-spacing:.2em;font-size:.75rem;text-transform:uppercase;
+  contain:layout paint}
+.figure::after{content:'';position:absolute;inset:16px;border:1px solid rgba(184,134,11,.2);pointer-events:none}
+.figure__kanji{position:absolute;font-family:var(--f-serif);font-weight:800;
+  font-size:8rem;color:rgba(184,134,11,.15);line-height:1}
+
+/* Video card */
+.video-card{background:var(--c-surface);border:1px solid var(--c-line);
+  overflow:hidden;transition:transform var(--t-base) var(--ease),box-shadow var(--t-base) var(--ease);
+  contain:layout paint}
+.video-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.video-card__frame{position:relative;aspect-ratio:16/9;background:var(--c-ink);overflow:hidden}
+.video-card__frame iframe{width:100%;height:100%;border:0;display:block}
+.video-card__body{padding:var(--space-md)}
+.video-card__tag{display:inline-block;font-size:.65rem;font-weight:700;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--c-accent);margin-bottom:.6rem}
+.video-card h3{font-size:1.15rem;margin-bottom:.5rem}
+.video-card p{color:var(--c-mute);font-size:.92rem;max-width:none}
+
+.cta{position:relative;text-align:center;padding:clamp(3.5rem,8vw,7rem) var(--space-md);
+  background:var(--c-ink);color:#f5f3ee;overflow:hidden;contain:layout paint}
+.cta .kanji--bg{position:absolute;font-family:var(--f-serif);font-weight:800;
+  font-size:clamp(12rem,32vw,28rem);color:rgba(184,134,11,.08);
+  line-height:.8;top:50%;left:50%;transform:translate(-50%,-50%);
+  pointer-events:none;user-select:none;z-index:0}
+.cta__inner{position:relative;z-index:1;max-width:720px;margin-inline:auto}
+.cta h2{color:#f5f3ee;margin-bottom:var(--space-md)}
+.cta p{color:rgba(245,243,238,.7);margin:0 auto var(--space-lg);max-width:none}
+.cta .section-eyebrow{color:var(--c-accent-3)}
+.cta .section-eyebrow::before{background:var(--c-accent-3)}
+
+.site-footer{background:#0e0e0e;color:#a8a49c;font-size:.875rem;
+  padding:var(--space-xl) 0 var(--space-md);border-top:1px solid rgba(255,255,255,.06)}
+.site-footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--space-lg);margin-bottom:var(--space-lg)}
+.site-footer h4{font-family:var(--f-body);font-size:.7rem;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--c-accent-3);margin-bottom:var(--space-sm);font-weight:700}
+.site-footer p{color:#6b6862;max-width:42ch}
+.site-footer ul{display:grid;gap:.65rem}
+.site-footer a{color:#a8a49c;transition:color var(--t-fast) var(--ease);font-size:.875rem}
+.site-footer a:hover{color:var(--c-accent-3)}
+.site-footer__bottom{padding-top:var(--space-md);border-top:1px solid rgba(255,255,255,.06);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-sm);
+  font-size:.75rem;letter-spacing:.08em;color:#5a5752}
+
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity var(--t-slow) var(--ease),transform var(--t-slow) var(--ease);
+  will-change:opacity,transform}
+.reveal.is-visible{opacity:1;transform:none;will-change:auto}
+.reveal[data-delay="1"]{transition-delay:120ms}
+.reveal[data-delay="2"]{transition-delay:240ms}
+.reveal[data-delay="3"]{transition-delay:360ms}
+.reveal[data-delay="4"]{transition-delay:480ms}
+
+.skip-link{position:absolute;top:-100px;left:1rem;padding:.75rem 1.25rem;
+  background:var(--c-ink);color:#fff;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;font-size:.75rem;z-index:9999;transition:top var(--t-fast) var(--ease)}
+.skip-link:focus{top:1rem}
+:focus-visible{outline:2px solid var(--c-accent);outline-offset:3px}
+
+@media (max-width:1100px){.site-footer__grid{grid-template-columns:1fr 1fr}}
+@media (max-width:960px){
+  .grid-2{grid-template-columns:1fr}
+}
+@media (max-width:780px){
+  :root{--header-h:68px}
+  .hero__actions{flex-direction:column;align-items:stretch}
+  .btn{justify-content:center}
+  .site-footer__grid{grid-template-columns:1fr}
+  .site-footer__bottom{flex-direction:column;text-align:center}
+  .card__head{grid-template-columns:1fr;text-align:center;gap:var(--space-sm)}
+  .card__kanji{font-size:4rem}
+  .card__table{font-size:.82rem}
+  .card__table th,.card__table td{padding:.45rem .5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <a href="index.html" class="brand" aria-label="Inicio">
+      <span class="brand__mark brand__mark--photo">
+        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=200&h=200&fit=crop&q=70"
+             alt="Maestro fundador" loading="eager" decoding="async" width="44" height="44">
+      </span>
+      <span class="brand__text">
+     KEN BOXING RYU <small>Arte Marcial Cubano</small></span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav" id="mainNav" aria-label="Principal">
+    <div class="nav__close">
+      <span class="nav__close-title">Menú</span>
+      <button class="nav__close-btn" id="navClose" aria-label="Cerrar menú">✕</button>
+    </div>
+    <ul class="nav__list">
+      <li><a class="nav__link" href="index.html" aria-current="page">Inicio</a></li>
+      <li><a class="nav__link" href="el-maestro.html">El Maestro</a></li>
+      <li><a class="nav__link" href="el-estilo.html">El Estilo</a></li>
+      <li><a class="nav__link" href="tecnicas.html">Técnicas</a></li>
+      <li><a class="nav__link" href="bibliografia.html">Bibliografía</a></li>
+      <li><a class="nav__link" href="galeria.html">Galería</a></li>
+      <li><a class="nav__link" href="agradecimiento.html">Agradecimiento</a></li>
+      <li><a class="nav__link" href="contacto.html">Contacto</a></li>
+    </ul>
+    <div class="nav__footer">KEN BOXING RYU</div>
+  </nav>
+</header>
+
+<div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="hero__kanji" aria-hidden="true">武</div>
+    <div class="container hero__content">
+      <p class="hero__eyebrow reveal">Fundado en Cuba</p>
+      <h1 class="hero__title reveal" data-delay="1">
+        El Arte Marcial
+        <em>que nació del Caribe</em>
+      </h1>
+      <p class="hero__desc reveal" data-delay="2">
+        Un sistema marcial original, forjado por el Maestro cinturon negro 9no DAN Julio Lemus Calderon a partir de décadas
+        de práctica, investigación y síntesis técnica. Documentamos aquí su historia,
+        su filosofía, su técnica y su legado para las generaciones venideras.
+      </p>
+      <div class="hero__actions reveal" data-delay="3">
+        <a href="el-maestro.html" class="btn btn--accent"><span>Conocer al Maestro</span></a>
+        <a href="tecnicas.html" class="btn btn--ghost"><span>Ver Técnicas</span></a>
+      </div>
+      <div class="hero__meta reveal" data-delay="4">
+        <div class="hero__meta-item"><strong>50+</strong><span>Años de Trayectoria</span></div>
+        <div class="hero__meta-item"><strong>1000+</strong><span>Discípulos Formados</span></div>
+        <div class="hero__meta-item"><strong>120+</strong><span>Técnicas Catalogadas</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div class="reveal">
+        <span class="section-eyebrow">Un Legado Cubano</span>
+        <h2 class="section-title">Bienvenido al archivo oficial</h2>
+        <p class="text-justify lead">
+          Este espacio no es solo una página informativa: es un tratado técnico,
+          filosófico y documental que registra la creación, evolución y fundamentos
+          de este arte marcial concebido en la isla de Cuba.
+        </p>
+        <p class="text-justify">
+          Aquí quedará registrada para la posteridad la riqueza técnica y cultural
+          de esta disciplina, poniendo a disposición de practicantes e investigadores
+          un estudio profundo de sus raíces y su innovación.
+        </p>
+      </div>
+      <div class="figure reveal" data-delay="1" aria-label="Emblema del estilo">
+        <span class="figure__kanji">道</span>
+        [ Emblema del Estilo ]
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:var(--space-xl)">
+        <span class="section-eyebrow">Fundamentos</span>
+        <h2 class="section-title section-title--center reveal">Pilares del Estilo</h2>
+        <p class="lead reveal" data-delay="1" style="margin-inline:auto;text-align:center;max-width:62ch">
+          Tres conceptos fundamentales sostienen toda la filosofía del estilo.
+          A continuación se presenta el significado profundo de cada uno.
+        </p>
+      </div>
+
+      <div class="grid-1">
+
+        <!-- 礼 FILOSOFÍA -->
+        <article class="card reveal">
+          <div class="card__head">
+            <div class="card__kanji">礼</div>
+            <div class="card__title-block">
+              <h3>Filosofía — El Respeto</h3>
+              <div class="card__readings">
+                Lectura: <strong>Rei</strong> (japonés) · <strong>Lǐ</strong> (chino) · <strong>Rye</strong> (coreano)
+              </div>
+            </div>
+          </div>
+          <div class="card__body">
+            <p>
+              <strong>礼</strong> es un kanji (carácter japonés de origen chino) que representa
+              uno de los conceptos más importantes de las artes marciales tradicionales.
+              Su traducción más fiel sería <em>cortesía</em> o <em>respeto</em>, pero abarca mucho más:
+              es toda la conducta correcta hacia los demás.
+            </p>
+
+            <h4 class="card__subtitle">Significados</h4>
+            <ul class="card__list">
+              <li>Cortesía y buena conducta</li>
+              <li>Respeto y etiqueta marcial (protocolo)</li>
+              <li>Saludo ceremonial y urbanidad</li>
+              <li>El acto de inclinarse (en artes marciales)</li>
+            </ul>
+
+            <h4 class="card__subtitle">Origen — El Confucianismo</h4>
+            <p>
+              <strong>礼</strong> es uno de los <strong>cinco principios fundamentales del confucianismo</strong>:
+            </p>
+            <table class="card__table">
+              <thead>
+                <tr><th>Principio</th><th>Significado</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>仁 (rén)</td><td>Benevolencia</td></tr>
+                <tr><td>义 (yì)</td><td>Rectitud</td></tr>
+                <tr><td><strong>礼 (lǐ)</strong></td><td><strong>Cortesía / Respeto</strong></td></tr>
+                <tr><td>智 (zhì)</td><td>Sabiduría</td></tr>
+                <tr><td>信 (xìn)</td><td>Confianza</td></tr>
+              </tbody>
+            </table>
+            <p>
+              Confucio enseñaba que <strong>礼</strong> es lo que distingue al ser humano civilizado
+              del salvaje: la manera en que uno se comporta con los demás, con los mayores,
+              con los maestros y consigo mismo.
+            </p>
+
+            <h4 class="card__subtitle">En las Artes Marciales</h4>
+            <p>
+              <strong>礼</strong> es el <strong>primer principio del budo</strong> (camino marcial japonés):
+            </p>
+            <ul class="card__list">
+              <li>Cuando entras al <em>dōjō</em> → haces <em>rei</em> (te inclinas)</li>
+              <li>Cuando saludas a tu maestro → haces <em>rei</em></li>
+              <li>Cuando empiezas y terminas una <em>kata</em> → haces <em>rei</em></li>
+              <li>Cuando entrenas con un compañero → haces <em>rei</em> antes y después</li>
+            </ul>
+
+            <div class="card__quote">
+              <p>El combate comienza y termina con 礼.</p>
+            </div>
+
+            <p>
+              Sin <strong>礼</strong>, las artes marciales serían solo violencia.
+              Con <strong>礼</strong>, se convierten en un camino de formación humana.
+            </p>
+
+            <h4 class="card__subtitle">Cómo se ve en el dojo</h4>
+            <ul class="card__list">
+              <li><strong>立礼 (ritsurei)</strong> → saludo de pie (inclinación de pie)</li>
+              <li><strong>座礼 (zarei)</strong> → saludo sentado (de rodillas, inclinación desde el suelo)</li>
+            </ul>
+            <p>Ambos son formas de <strong>礼</strong> en acción.</p>
+
+            <div class="card__footer">
+              <strong>礼 (Rei)</strong> = El respeto hecho acción. El saludo que convierte la práctica
+              en camino y al practicante en artista marcial.
+            </div>
+          </div>
+        </article>
+
+        <!-- 技 TÉCNICA -->
+        <article class="card reveal" data-delay="1">
+          <div class="card__head">
+            <div class="card__kanji">技</div>
+            <div class="card__title-block">
+              <h3>Técnica — La Habilidad</h3>
+              <div class="card__readings">
+                Lectura: <strong>Gi / Waza</strong> (japonés) · <strong>Jì</strong> (chino) · <strong>Gi</strong> (coreano)
+              </div>
+            </div>
+          </div>
+          <div class="card__body">
+            <p>
+              <strong>技</strong> es un kanji que representa uno de los conceptos más importantes en
+              las artes marciales y en cualquier disciplina de maestría. La traducción más
+              precisa sería <em>técnica</em> o <em>destreza</em>, pero implica algo más profundo:
+              <strong>la habilidad que solo se obtiene por repetición constante y disciplinada</strong>.
+            </p>
+
+            <h4 class="card__subtitle">Significados</h4>
+            <ul class="card__list">
+              <li>Técnica / habilidad marcial</li>
+              <li>Destreza y maestría adquirida</li>
+              <li>Arte — en el sentido de oficio pulido</li>
+              <li>Capacidad entrenada a través del tiempo</li>
+            </ul>
+
+            <h4 class="card__subtitle">Composición del carácter</h4>
+            <p><strong>技</strong> está formado por dos partes:</p>
+            <table class="card__table">
+              <thead>
+                <tr><th>Parte</th><th>Significado</th><th>Función</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>扌</td><td>La mano (radical)</td><td>Indica algo hecho con las manos</td></tr>
+                <tr><td>支</td><td>Rama, sostener, apoyar</td><td>Aporta el sonido</td></tr>
+              </tbody>
+            </table>
+            <p>
+              <em>Lectura profunda:</em> la técnica es aquello que la <strong>mano sostiene</strong>
+              después de años de práctica. No se nace con <strong>技</strong> — <strong>技</strong> se construye.
+            </p>
+
+            <h4 class="card__subtitle">En las Artes Marciales</h4>
+            <p><strong>技 (Waza)</strong> es la palabra que se usa para:</p>
+            <ul class="card__list">
+              <li><strong>打撃技 (dageki waza)</strong> → técnica de golpeo</li>
+              <li><strong>投げ技 (nage waza)</strong> → técnica de proyección</li>
+              <li><strong>関節技 (kansetsu waza)</strong> → técnica de luxación</li>
+              <li><strong>固め技 (gatame waza)</strong> → técnica de inmovilización</li>
+            </ul>
+
+            <h4 class="card__subtitle">Diferencia con otros conceptos</h4>
+            <table class="card__table">
+              <thead>
+                <tr><th>Kanji</th><th>Lectura</th><th>Significado</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>技</strong></td><td>Waza / Gi</td><td>Técnica — el «qué» se hace</td></tr>
+                <tr><td>術</td><td>Jutsu</td><td>Arte / método — el sistema completo</td></tr>
+                <tr><td>道</td><td>Dō</td><td>Camino — la vía filosófica</td></tr>
+                <tr><td>心</td><td>Kokoro</td><td>Corazón / mente — el espíritu que la sostiene</td></tr>
+                <tr><td>体</td><td>Tai</td><td>Cuerpo — la base física</td></tr>
+              </tbody>
+            </table>
+
+            <div class="card__formula">
+              体 (cuerpo) + <strong>技 (técnica)</strong> + 心 (mente) = 道 (camino)
+            </div>
+            <p>
+              El cuerpo se entrena, la técnica se pule, la mente se cultiva —
+              y todo junto forma el camino del artista marcial.
+            </p>
+
+            <h4 class="card__subtitle">Niveles de maestría en 技</h4>
+            <ul class="card__list">
+              <li><strong>形 (Kata)</strong> → aprendes la forma exacta</li>
+              <li><strong>技 (Waza)</strong> → dominas la técnica</li>
+              <li><strong>理 (Ri)</strong> → comprendes el principio</li>
+              <li><strong>道 (Dō)</strong> → la técnica se vuelve camino</li>
+            </ul>
+            <p><em>No se domina 技 hasta que el cuerpo la ejecuta sin pensar.</em></p>
+
+            <div class="card__footer">
+              <strong>技 (Gi / Waza)</strong> = La técnica hecha carne por la práctica.
+              No se hereda, no se regala — <strong>se construye con sudor y repetición</strong>.
+            </div>
+          </div>
+        </article>
+
+        <!-- 系 LINAJE -->
+        <article class="card reveal" data-delay="2">
+          <div class="card__head">
+            <div class="card__kanji">系</div>
+            <div class="card__title-block">
+              <h3>Linaje — La Transmisión</h3>
+              <div class="card__readings">
+                Lectura: <strong>Kei</strong> (japonés) · <strong>Xì</strong> (chino) · <strong>Gye</strong> (coreano)
+              </div>
+            </div>
+          </div>
+          <div class="card__body">
+            <p>
+              <strong>系</strong> es un kanji que en el contexto marcial representa uno de los conceptos
+              más importantes para un estilo: el <strong>linaje</strong>, la línea de transmisión
+              de maestro a discípulo. La traducción más fiel sería <em>linaje</em> o <em>sistema</em>,
+              pero implica algo más: <strong>la idea de que todo está conectado con lo anterior</strong>.
+            </p>
+
+            <h4 class="card__subtitle">Significados</h4>
+            <ul class="card__list">
+              <li>Linaje / línea de descendencia</li>
+              <li>Sistema y conexión entre elementos</li>
+              <li>Ascendencia familiar o marcial</li>
+              <li>Cadena de transmisión del conocimiento</li>
+              <li>Hilo invisible que conecta una cosa con otra</li>
+            </ul>
+
+            <h4 class="card__subtitle">Composición del carácter</h4>
+            <p><strong>系</strong> está formado por dos partes:</p>
+            <table class="card__table">
+              <thead>
+                <tr><th>Parte</th><th>Significado</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>糸 / 糹</td><td>Radical de seda/hilo — la continuidad</td></tr>
+                <tr><td>一 + trazos</td><td>La línea que desciende</td></tr>
+              </tbody>
+            </table>
+            <p>
+              <em>Lectura profunda:</em> la imagen original es un <strong>hilo de seda que cuelga</strong> —
+              continuo, fino, resistente. Así es el linaje: invisible a la vista, pero sostiene todo.
+            </p>
+
+            <h4 class="card__subtitle">En las Artes Marciales</h4>
+            <p><strong>系 (Kei)</strong> es el concepto que sostiene la legitimidad de un estilo:</p>
+            <ul class="card__list">
+              <li><strong>系統 (keitō)</strong> → sistema / línea de transmisión</li>
+              <li><strong>流派 (ryūha)</strong> → escuela / rama de un estilo</li>
+              <li><strong>系図 (keizu)</strong> → árbol genealógico marcial</li>
+              <li><strong>直系 (chokkei)</strong> → línea directa (discípulo directo del fundador)</li>
+            </ul>
+
+            <h4 class="card__subtitle">Por qué el linaje importa</h4>
+            <p>
+              En las artes marciales tradicionales, una técnica sin linaje es solo un movimiento
+              copiado. Pero una técnica transmitida dentro de un <strong>系</strong> lleva consigo:
+            </p>
+            <ul class="card__list">
+              <li>La intención original del fundador</li>
+              <li>Los ajustes que cada generación fue haciendo</li>
+              <li>La filosofía que la acompaña</li>
+              <li>La autoridad de quien la enseña</li>
+            </ul>
+            <p>
+              <strong>Sin 系, no hay arte marcial tradicional. Solo hay imitación.</strong>
+            </p>
+
+            <h4 class="card__subtitle">Diferencia con conceptos relacionados</h4>
+            <table class="card__table">
+              <thead>
+                <tr><th>Kanji</th><th>Lectura</th><th>Significado</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>系</strong></td><td>Kei</td><td>Linaje / sistema — el hilo que conecta</td></tr>
+                <tr><td>流</td><td>Ryū</td><td>Escuela / estilo — la corriente que fluye</td></tr>
+                <tr><td>家</td><td>Ka / Ie</td><td>Casa / familia — el hogar del linaje</td></tr>
+                <tr><td>祖</td><td>So</td><td>Ancestro / fundador — el origen del hilo</td></tr>
+                <tr><td>弟</td><td>Tei</td><td>Discípulo — el eslabón siguiente</td></tr>
+              </tbody>
+            </table>
+
+            <div class="card__formula">
+              祖 (fundador) → <strong>系 (linaje)</strong> → 流 (escuela) → 弟 (discípulo)
+            </div>
+            <p>
+              Sin <strong>系</strong>, el fundador queda aislado. Sin <strong>系</strong>,
+              el discípulo queda huérfano de tradición.
+            </p>
+
+            <h4 class="card__subtitle">En el contexto cubano</h4>
+            <p>
+              En Cuba, <strong>系</strong> adquiere un sentido especial:
+            </p>
+            <ul class="card__list">
+              <li>El Maestro <strong>creó</strong> un estilo nuevo (es el 祖, fundador)</li>
+              <li>Al crearlo, también <strong>conectó</strong> las tradiciones que estudió con la realidad cubana</li>
+              <li>El <strong>系</strong> que sale de él hacia sus discípulos garantiza que el estilo no muera con él</li>
+            </ul>
+
+            <div class="card__quote">
+              <p>El 系 es la respuesta a la pregunta: «¿De dónde vengo y a quién le debo lo que sé?»</p>
+            </div>
+
+            <h4 class="card__subtitle">Los tres conceptos unidos</h4>
+            <table class="card__table">
+              <thead>
+                <tr><th>Kanji</th><th>Pilar</th><th>Significado</th><th>Rol</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>礼</td><td>Filosofía</td><td>Respeto</td><td>El alma</td></tr>
+                <tr><td>技</td><td>Técnica</td><td>Habilidad</td><td>El cuerpo</td></tr>
+                <tr><td>系</td><td>Linaje</td><td>Transmisión</td><td>La memoria</td></tr>
+              </tbody>
+            </table>
+            <p>
+              礼 sin 技 → teoría vacía · 技 sin 系 → técnica sin raíz · 系 sin 礼 → tradición sin espíritu.<br>
+              <strong>Los tres juntos = un arte marcial completo.</strong>
+            </p>
+
+            <div class="card__footer">
+              <strong>系 (Kei)</strong> = El hilo invisible que une al fundador con cada discípulo.
+              No se puede ver, no se puede tocar — pero <strong>sin él, un estilo no existe</strong>.
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="margin-bottom:var(--space-xl)">
+        <span class="section-eyebrow">Archivo Audiovisual</span>
+        <h2 class="section-title reveal">Videos Destacados</h2>
+        <p class="lead" style="max-width:62ch">
+          Registro en video de las técnicas fundamentales y demostraciones del estilo.
+        </p>
+      </div>
+      <div class="grid-3">
+        <article class="video-card reveal">
+          <div class="video-card__frame">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demostración técnica" allowfullscreen allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          </div>
+          <div class="video-card__body">
+            <span class="video-card__tag">Fundamentos</span>
+            <h3>Demostración de Katas Básicas</h3>
+            <p>Introducción a las formas fundamentales del estilo con explicación paso a paso.</p>
+          </div>
+        </article>
+        <article class="video-card reveal" data-delay="1">
+          <div class="video-card__frame">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Aplicación marcial" allowfullscreen></iframe>
+          </div>
+          <div class="video-card__body">
+            <span class="video-card__tag">Aplicación</span>
+            <h3>Aplicaciones Marciales</h3>
+            <p>Interpretación práctica de las técnicas en situación real.</p>
+          </div>
+        </article>
+        <article class="video-card reveal" data-delay="2">
+          <div class="video-card__frame">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Entrevista al Maestro" allowfullscreen></iframe>
+          </div>
+          <div class="video-card__body">
+            <span class="video-card__tag">Documental</span>
+            <h3>Entrevista al Maestro</h3>
+            <p>Conversación sobre la historia y filosofía del estilo.</p>
+          </div>
+        </article>
+      </div>
+      <div class="text-center" style="margin-top:var(--space-lg)">
+        <a href="tecnicas.html" class="btn btn--ghost"><span>Ver todo el archivo</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="kanji--bg" aria-hidden="true">道場</div>
+    <div class="cta__inner">
+      <span class="section-eyebrow">Únase al legado</span>
+      <h2 class="reveal">Forme parte de la historia</h2>
+      <p class="reveal" data-delay="1">
+        Si es practicante, investigador o un apasionado de las artes marciales,
+        este es su punto de contacto con el linaje.
+      </p>
+      <a href="contacto.html" class="btn btn--light reveal" data-delay="2"><span>Contactar</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <h4>KEN BOXING RYU</h4>
+        <p>Archivo histórico y documental del arte marcial cubano fundado por el Maestro Cinturon Negro 9no DAN Julio Lemus Calderon.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="el-maestro.html">El Maestro</a></li>
+          <li><a href="el-estilo.html">El Estilo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Archivo</h4>
+        <ul>
+          <li><a href="tecnicas.html">Técnicas</a></li>
+          <li><a href="bibliografia.html">Bibliografía</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="agradecimiento.html">Agradecimiento</a></li>
+          <li><a href="contacto.html">Formulario</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>&copy; 2026 KEN BOXING RYU. Todos los derechos reservados.</span>
+      <span>Diseño Analítico &middot; Archivo Documental</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var header = document.getElementById('siteHeader');
+  var onScroll = function(){ header.classList.toggle('is-scrolled', window.scrollY > 20); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  var toggle   = document.getElementById('navToggle');
+  var nav      = document.getElementById('mainNav');
+  var overlay  = document.getElementById('navOverlay');
+  var closeBtn = document.getElementById('navClose');
+
+  function openNav(){
+    nav.classList.add('is-open');
+    overlay.classList.add('is-open');
+    toggle.setAttribute('aria-expanded','true');
+    toggle.setAttribute('aria-label','Cerrar menú');
+    document.body.classList.add('no-scroll');
+  }
+  function closeNav(){
+    nav.classList.remove('is-open');
+    overlay.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Abrir menú');
+    document.body.classList.remove('no-scroll');
+  }
+  if (toggle && nav && overlay){
+    toggle.addEventListener('click', function(){
+      nav.classList.contains('is-open') ? closeNav() : openNav();
+    });
+    if (closeBtn) closeBtn.addEventListener('click', closeNav);
+    overlay.addEventListener('click', closeNav);
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) closeNav();
+    });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', closeNav);
+    });
+  }
+
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, {threshold:.08, rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+});
+</script>
+</body>
+</html>
