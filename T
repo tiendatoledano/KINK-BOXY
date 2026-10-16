@@ -1,0 +1,33 @@
+ken-boxing-ryu/
+├── index.html
+├── el-maestro.html
+├── el-estilo.html
+├── filosofia.html
+├── tecnicas.html
+├── bibliografia.html
+├── galeria.html
+├── agradecimiento.html
+├── contacto.html
+│
+├── assets/
+│   ├── css/
+│   │   ├── base.css          ← Reset, variables, tipografía
+│   │   ├── layout.css        ← Header, footer, containers, grids
+│   │   ├── components.css    ← Botones, cards, tarjetas, tablas
+│   │   └── pages.css         ← Estilos específicos de páginas
+│   │
+│   ├── js/
+│   │   ├── config.js         ← Configuración global (rutas, contacto)
+│   │   ├── header.js         ← Header dinámico compartido
+│   │   ├── nav.js            ← Menú móvil
+│   │   ├── reveal.js         ← Animaciones al scroll
+│   │   ├── forms.js          ← Validación de formularios
+│   │   └── main.js           ← Inicializador general
+│   │
+│   └── img/
+│       └── (imágenes locales si las hay)
+│
+├── .htaccess                 ← Seguridad + caché + compresión
+├── robots.txt                ← SEO
+├── sitemap.xml               ← SEO
+└── README.md                 ← Documentación
