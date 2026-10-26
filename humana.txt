@@ -1,0 +1,11 @@
+/* TEAM */
+  Fundador: Maestro Julio Lemus Calderón
+  Rol: Cinturón Negro 9no DAN · Shihan · Hanshi
+  Contacto: contacto@kenboxingryu.cu
+
+/* SITE */
+  Nombre: KEN BOXING RYU
+  Lenguaje: Español
+  Doctype: HTML5
+  Componentes: CSS3 · JavaScript ES5
+  Fecha: 2026
