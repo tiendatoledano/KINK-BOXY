@@ -1,0 +1,57 @@
+/* =========================================================
+   GALERÍA DINÁMICA — imágenes reales + lightbox con imagen
+   ========================================================= */
+
+.gallery__item{
+  background:#141414;
+  position:relative;
+}
+.gallery__item img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+  transition:transform var(--t-slow) var(--ease);
+}
+.gallery__item:hover img{
+  transform:scale(1.05);
+}
+
+.gallery__cap{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:.85rem 1rem;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#fff;
+  font-family:var(--f-body);
+  font-weight:600;
+  background:linear-gradient(0deg,rgba(0,0,0,.85),transparent);
+  z-index:2;
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity var(--t-base) var(--ease),
+             transform var(--t-base) var(--ease);
+}
+.gallery__item:hover .gallery__cap,
+.gallery__item:focus-visible .gallery__cap{
+  opacity:1;
+  transform:none;
+}
+
+.lightbox__box{
+  padding:0;
+  overflow:hidden;
+}
+.lightbox__box img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  background:#000;
+}
