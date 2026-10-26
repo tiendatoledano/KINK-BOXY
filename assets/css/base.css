@@ -1,0 +1,311 @@
+/* =========================================================
+   BASE.CSS — Reset, variables, tipografía, utilidades
+   KEN BOXING RYU — Premium Edition
+   ========================================================= */
+
+/* ---------- Variables globales ---------- */
+:root{
+  /* Colores */
+  --c-bg:#f7f4ee;
+  --c-bg-alt:#efeae0;
+  --c-surface:#ffffff;
+  --c-surface-2:#fbf9f4;
+  --c-ink:#141414;
+  --c-ink-2:#2a2a2a;
+  --c-mute:#6b6862;
+  --c-dim:#9a958d;
+  --c-accent:#b8860b;
+  --c-accent-2:#8b0000;
+  --c-accent-3:#c9a227;
+  --c-line:rgba(20,20,20,.1);
+  --c-line-strong:rgba(20,20,20,.2);
+
+  /* Tipografías */
+  --f-display:'Cinzel',serif;
+  --f-serif:'Shippori Mincho',serif;
+  --f-body:'Montserrat',system-ui,-apple-system,sans-serif;
+
+  /* Tamaños fluidos */
+  --fs-hero:clamp(2.6rem,7vw + 1rem,6rem);
+  --fs-h1:clamp(2rem,4vw + 1rem,3.75rem);
+  --fs-h2:clamp(1.6rem,2.4vw + .8rem,2.75rem);
+  --fs-h3:clamp(1.15rem,1vw + .9rem,1.5rem);
+  --fs-body:clamp(.95rem,.4vw + .85rem,1.0625rem);
+  --fs-small:.8125rem;
+
+  /* Espaciado */
+  --space-xs:.5rem;
+  --space-sm:1rem;
+  --space-md:1.75rem;
+  --space-lg:3rem;
+  --space-xl:5rem;
+  --space-2xl:8rem;
+
+  /* Layout */
+  --container:1240px;
+  --header-h:78px;
+
+  /* Animación */
+  --ease:cubic-bezier(.22,1,.36,1);
+  --t-fast:200ms;
+  --t-base:380ms;
+  --t-slow:700ms;
+
+  /* Sombras base */
+  --shadow-sm:0 1px 2px rgba(20,20,20,.05),0 2px 6px rgba(20,20,20,.05);
+  --shadow-md:0 4px 12px rgba(20,20,20,.07),0 12px 32px rgba(20,20,20,.08);
+  --shadow-lg:0 12px 32px rgba(20,20,20,.1),0 32px 64px rgba(20,20,20,.12);
+
+  /* Sombras premium multicapa */
+  --shadow-premium-xs:
+    0 1px 2px rgba(20,20,20,.04),
+    0 2px 4px rgba(20,20,20,.04),
+    0 4px 8px rgba(20,20,20,.03);
+  --shadow-premium-sm:
+    0 1px 3px rgba(20,20,20,.05),
+    0 4px 8px rgba(20,20,20,.04),
+    0 8px 16px rgba(20,20,20,.03);
+  --shadow-premium-md:
+    0 2px 4px rgba(20,20,20,.05),
+    0 8px 16px rgba(20,20,20,.06),
+    0 16px 32px rgba(20,20,20,.05);
+  --shadow-premium-lg:
+    0 4px 8px rgba(20,20,20,.06),
+    0 16px 32px rgba(20,20,20,.08),
+    0 32px 64px rgba(20,20,20,.06);
+  --shadow-premium-xl:
+    0 8px 16px rgba(20,20,20,.08),
+    0 24px 48px rgba(20,20,20,.12),
+    0 48px 96px rgba(20,20,20,.08);
+  --shadow-accent:
+    0 4px 12px rgba(184,134,11,.15),
+    0 12px 32px rgba(184,134,11,.12),
+    0 24px 48px rgba(184,134,11,.08);
+}
+
+/* ---------- Reset ---------- */
+*,*::before,*::after{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+  scroll-padding-top:calc(var(--header-h) + 1rem);
+}
+
+body{
+  font-family:var(--f-body);
+  font-size:var(--fs-body);
+  line-height:1.7;
+  color:var(--c-ink);
+  background:var(--c-bg);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-feature-settings:'kern' 1,'liga' 1,'onum' 1;
+  text-rendering:optimizeLegibility;
+  font-optical-sizing:auto;
+}
+
+body.no-scroll{overflow:hidden;}
+
+img,svg,video{
+  max-width:100%;
+  display:block;
+  transition:opacity .6s cubic-bezier(.22,1,.36,1);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+  cursor:pointer;
+  border:none;
+  background:none;
+  color:inherit;
+}
+
+ul,ol{list-style:none;}
+
+/* ---------- Selección ---------- */
+::selection{
+  background:var(--c-accent);
+  color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,.15);
+}
+
+/* ---------- Scrollbar personalizada ---------- */
+::-webkit-scrollbar{width:12px;}
+::-webkit-scrollbar-track{background:var(--c-bg-alt);}
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,var(--c-accent),var(--c-accent-2));
+  border-radius:6px;
+  border:3px solid var(--c-bg-alt);
+}
+::-webkit-scrollbar-thumb:hover{background:var(--c-accent);}
+
+/* ---------- Tipografía ---------- */
+h1,h2,h3,h4{
+  font-family:var(--f-display);
+  font-weight:700;
+  line-height:1.15;
+  color:var(--c-ink);
+  font-feature-settings:'kern' 1,'liga' 1,'calt' 1;
+}
+
+h1{font-size:var(--fs-h1);letter-spacing:-.025em;}
+h2{font-size:var(--fs-h2);letter-spacing:-.015em;}
+h3{font-size:var(--fs-h3);}
+
+p{max-width:68ch;}
+
+/* ---------- Utilidades ---------- */
+.container{
+  width:100%;
+  max-width:var(--container);
+  margin-inline:auto;
+  padding-inline:clamp(1.25rem,4vw,2.5rem);
+  position:relative;
+  z-index:1;
+}
+
+.text-center{text-align:center;}
+.text-justify{text-align:justify;hyphens:auto;max-width:68ch;}
+.text-accent{color:var(--c-accent);}
+.text-mute{color:var(--c-mute);}
+
+.section{
+  padding-block:clamp(4rem,9vw,8rem);
+  position:relative;
+  overflow:hidden;
+  content-visibility:auto;
+  contain-intrinsic-size:auto 800px;
+}
+
+.section--alt{background:var(--c-bg-alt);}
+
+/* ---------- Eyebrow premium ---------- */
+.section-eyebrow{
+  display:inline-block;
+  font-family:var(--f-body);
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--c-accent);
+  margin-bottom:var(--space-sm);
+  position:relative;
+  padding-left:56px;
+}
+.section-eyebrow::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:50%;
+  width:40px;
+  height:1.5px;
+  background:linear-gradient(90deg,var(--c-accent),transparent);
+  transform:translateY(-50%);
+}
+
+/* ---------- Section title premium ---------- */
+.section-title{
+  font-size:var(--fs-h2);
+  margin-bottom:var(--space-md);
+  position:relative;
+  display:inline-block;
+  padding-bottom:1.25rem;
+}
+.section-title::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:60px;
+  height:2px;
+  background:linear-gradient(90deg,var(--c-accent),var(--c-accent-3));
+  box-shadow:0 2px 8px rgba(184,134,11,.25);
+  transition:width .6s cubic-bezier(.22,1,.36,1);
+}
+.section-title:hover::after{width:90px;}
+.section-title--center{
+  display:block;
+  text-align:center;
+}
+.section-title--center::after{
+  left:50%;
+  transform:translateX(-50%);
+  box-shadow:
+    0 2px 8px rgba(184,134,11,.25),
+    0 0 0 3px rgba(184,134,11,.08);
+}
+
+.lead{
+  font-size:clamp(1.05rem,1vw + .85rem,1.25rem);
+  color:var(--c-mute);
+  line-height:1.8;
+  letter-spacing:.005em;
+  margin-bottom:var(--space-md);
+  max-width:62ch;
+}
+
+/* ---------- Accesibilidad ---------- */
+.skip-link{
+  position:absolute;
+  top:-100px;
+  left:1rem;
+  padding:.75rem 1.25rem;
+  background:var(--c-ink);
+  color:#fff;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-size:.75rem;
+  z-index:9999;
+  transition:top var(--t-fast) var(--ease);
+}
+.skip-link:focus{top:1rem;}
+
+:focus-visible{
+  outline:2px solid var(--c-accent);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+/* ---------- Reveal animations ---------- */
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity var(--t-slow) var(--ease),transform var(--t-slow) var(--ease);
+  will-change:opacity,transform;
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:none;
+  will-change:auto;
+}
+.reveal[data-delay="1"]{transition-delay:120ms;}
+.reveal[data-delay="2"]{transition-delay:240ms;}
+.reveal[data-delay="3"]{transition-delay:360ms;}
+.reveal[data-delay="4"]{transition-delay:480ms;}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+  .reveal{opacity:1;transform:none;}
+}
+
+/* ---------- Responsive base ---------- */
+@media (max-width:780px){
+  :root{--header-h:68px;}
+}
