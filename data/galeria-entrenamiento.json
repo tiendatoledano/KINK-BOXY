@@ -1,0 +1,42 @@
+[
+  {
+    "src": "assets/img/galeria/entrenamiento/entrenamiento-001.jpg",
+    "alt": "Entrenamiento del KEN BOXING RYU",
+    "categoria": "entrenamiento",
+    "fecha": "Escribir Fecha",
+    "nombres": "Escribir Nombres",
+    "descripcion": "Escribir Descripción"
+  },
+  {
+    "src": "assets/img/galeria/entrenamiento/entrenamiento-002.jpg",
+    "alt": "Entrenamiento del KEN BOXING RYU",
+    "categoria": "entrenamiento",
+    "fecha": "Escribir Fecha",
+    "nombres": "Escribir Nombres",
+    "descripcion": "Escribir Descripción"
+  },
+  {
+    "src": "assets/img/galeria/entrenamiento/entrenamiento-003.jpg",
+    "alt": "Entrenamiento del KEN BOXING RYU",
+    "categoria": "entrenamiento",
+    "fecha": "Escribir Fecha",
+    "nombres": "Escribir Nombres",
+    "descripcion": "Escribir Descripción"
+  },
+  {
+    "src": "assets/img/galeria/entrenamiento/entrenamiento-004.jpg",
+    "alt": "Entrenamiento del KEN BOXING RYU",
+    "categoria": "entrenamiento",
+    "fecha": "Escribir Fecha",
+    "nombres": "Escribir Nombres",
+    "descripcion": "Escribir Descripción"
+  },
+  {
+    "src": "assets/img/galeria/entrenamiento/entrenamiento-005.jpg",
+    "alt": "Entrenamiento del KEN BOXING RYU",
+    "categoria": "entrenamiento",
+    "fecha": "Escribir Fecha",
+    "nombres": "Escribir Nombres",
+    "descripcion": "Escribir Descripción"
+  }
+]
