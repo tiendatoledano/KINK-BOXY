@@ -15,7 +15,8 @@
   ];
 
   Promise.all(CATS.map(function (c) {
-    return fetch('data/videos-' + c.file + '.json')
+    // 🔽 AQUÍ ESTÁ EL CAMBIO DE RUTA
+    return fetch('data/videos/videos-' + c.file + '.json')
       .then(function (r) { return r.ok ? r.json() : []; })
       .then(function (arr) {
         return arr.map(function (v) {
