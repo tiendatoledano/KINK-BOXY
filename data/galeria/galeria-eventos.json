@@ -1,0 +1,43 @@
+[
+    
+  {
+    "src": "assets/img/galeria/eventos/eventos-001.jpg",
+    "alt": "Entrenamiento del KEN BOXING RYU",
+    "categoria": "entrenamiento",
+    "fecha": "12 de Octubre, 2024",
+    "nombres": "Julio Lemus, Yan Sergio Pérez, Wilian"
+  },
+
+  {
+    "src": "assets/img/galeria/eventos/eventos-002.jpg",
+    "alt": "Evento del KEN BOXING RYU",
+    "categoria": "eventos",
+    "fecha": "Escribir Fecha",
+    "nombres": "Escribir Nombres",
+    "descripcion": "Escribir Descripción"
+  },
+  {
+    "src": "assets/img/galeria/eventos/eventos-003.jpg",
+    "alt": "Evento del KEN BOXING RYU",
+    "categoria": "eventos",
+    "fecha": "Escribir Fecha",
+    "nombres": "Escribir Nombres",
+    "descripcion": "Escribir Descripción"
+  },
+  {
+    "src": "assets/img/galeria/eventos/eventos-004.jpg",
+    "alt": "Evento del KEN BOXING RYU",
+    "categoria": "eventos",
+    "fecha": "Escribir Fecha",
+    "nombres": "Escribir Nombres",
+    "descripcion": "Escribir Descripción"
+  },
+  {
+    "src": "assets/img/galeria/eventos/eventos-005.jpg",
+    "alt": "Evento del KEN BOXING RYU",
+    "categoria": "eventos",
+    "fecha": "Escribir Fecha",
+    "nombres": "Escribir Nombres",
+    "descripcion": "Escribir Descripción"
+  }
+]
